@@ -5,7 +5,9 @@ import PersonList from "./components/PersonList";
 import Status from "./components/Status";
 import Heading from "./components/Heading";
 import Oscar from "./components/Oscar";
-
+import ButtonEvent from "./components/ButtonEvent";
+import InputEvent from "./components/InputEvent";
+import StyleProps from "./components/StyleProps";
 function App() {
   const nameList = [
     {
@@ -34,6 +36,23 @@ function App() {
       <Oscar>
         <Heading>Oscar goes to Leonardo Dicaprio</Heading>
       </Oscar>
+      <ButtonEvent
+        handleClick={() => {
+          console.log("button clicked");
+        }}
+        handleClickEvent={(event, id) => {
+          console.log(event);
+          console.log(id);
+        }}
+      />
+      <InputEvent
+        value="hello"
+        handleChange={() => {}}
+        handleChangeEvent={(e) => {
+          console.log(e);
+        }}
+      />
+      <StyleProps styles={{ border: "1px solid red", padding: "1rem" }} />
     </div>
   );
 }
